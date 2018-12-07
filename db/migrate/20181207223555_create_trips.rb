@@ -1,7 +1,7 @@
 class CreateTrips < ActiveRecord::Migration[5.2]
   def change
     create_table :trips do |t|
-      t.string :id
+      t.string :trip_id
       t.string :start
       t.string :stop
       t.string :status
