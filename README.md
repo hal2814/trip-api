@@ -14,6 +14,8 @@ then inside the config folder copy the contents of `example.yml` into a new file
 
 run `bundle install` from your command line.
 
+run `rails db:create` then `rails db:migrate`
+
 run `rake trips:pull_data` from your command line.
 
 run `rails s` to serve the application on `localhost:3000`
