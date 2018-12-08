@@ -1,9 +1,11 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :update, :destroy]
-  include TripsHelper
 
   def index
-    @trips = Trip.all
+    # @trips = Trip.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
+    @trips = Trip.joins(:stats).order('stats.distance::float DESC').paginate(page: params[:page], per_page: 10)
+    max_speed_stat = Stat.where(max_speed: Stat.maximum("max_speed::integer"))
+    @max_speed_trip = Trip.where(id: max_speed_stat.first.trip_id).first
     # json_response(@trips)
   end
 

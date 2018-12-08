@@ -3,16 +3,17 @@ class StatsController < ApplicationController
   before_action :set_trip_stat, only: [:show, :update, :destroy]
 
   def index
-    json_response(@trip.stats)
+    @stats = Stat.all.order("distance::float DESC").paginate(page: params[:page], per_page: 10)
+    # json_response(@trip.stats)
   end
 
   def show
-    json_response(@stat)
+    # json_response(@stat)
   end
 
   def create
     @trip.stats.create!(stat_params)
-    json_response(@trip, :created)
+    # json_response(@trip, :created)
   end
 
   def update
