@@ -1,2 +1,0 @@
-#create file app-env and copy paste this
-export TRIP_API_URL="trip api url goes here"

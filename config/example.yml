@@ -1,0 +1,2 @@
+#create an application.yml file and copy paste the following with the correct url
+trip_api_url: "url goes here"
