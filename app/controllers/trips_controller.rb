@@ -1,9 +1,11 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :update, :destroy]
+  include TripsHelper
 
   def index
+    get_data_set('trips')
     @trips = Trip.all
-    json_response(@trips)
+    # json_response(@trips)
   end
 
   def create
