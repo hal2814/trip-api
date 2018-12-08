@@ -1,24 +1,19 @@
-# README
+# Trip API data
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Prerequisites:
+Ruby 2.5.1,
+Rails 5
 
-Things you may want to cover:
+To get started clone this application by running:
 
-* Ruby version
+```
+git clone git@github.com:hal2814/trip-api.git
+```
 
-* System dependencies
+then inside the config folder copy the contents of `example.yml` into a new file called `application.yml` and copy your json data url into the appropriate spot.
 
-* Configuration
+run `bundle install` from your command line.
 
-* Database creation
+run `rake trips:pull_data` from your command line.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+run `rails s` to serve the application on `localhost:3000`
