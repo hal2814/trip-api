@@ -45,7 +45,7 @@ RSpec.describe 'Trips API', type: :request do
   end
 
   describe 'POST /trips' do
-    let(:valid_attributes) { { trip_id: '4593456', start: '145', stop: '345', status: "completed", vehicleId: '1092834576', deviceId: '98273' } }
+    let(:valid_attributes) { { trip_id_number: '4593456', start: '145', stop: '345', status: "completed", vehicleId: '1092834576', deviceId: '98273' } }
 
     context 'when the request is valid' do
       before { post '/trips', params: valid_attributes }
@@ -60,7 +60,7 @@ RSpec.describe 'Trips API', type: :request do
     end
 
     context 'when the request is invalid' do
-      before { post '/trips', params: { trip_id: 'invalid_request' } }
+      before { post '/trips', params: { trip_id_number: 'invalid_request' } }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -74,7 +74,7 @@ RSpec.describe 'Trips API', type: :request do
   end
 
   describe 'PUT /trips/:id' do
-    let(:valid_attributes) { { trip_id: '9827364' } }
+    let(:valid_attributes) { { trip_id_number: '9827364' } }
 
     context 'when the record exists' do
       before { put "/trips/#{trip_id}", params: valid_attributes }

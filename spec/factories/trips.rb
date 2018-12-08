@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :trip do
-    trip_id { Faker::Number.number(7) }
+    trip_id_number { Faker::Number.number(7) }
     start { Faker::Number.number(3) }
     stop { Faker::Number.number(3) }
     status { "completed" }
