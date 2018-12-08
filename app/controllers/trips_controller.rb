@@ -3,18 +3,17 @@ class TripsController < ApplicationController
   include TripsHelper
 
   def index
-    get_data_set('trips')
     @trips = Trip.all
     # json_response(@trips)
   end
 
   def create
     @trip = Trip.create!(trip_params)
-    json_response(@trip, :created)
+    # json_response(@trip, :created)
   end
 
   def show
-    json_response(@trip)
+    # json_response(@trip)
   end
 
   def update
