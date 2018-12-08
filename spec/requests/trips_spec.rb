@@ -39,7 +39,7 @@ RSpec.describe 'Trips API', type: :request do
       end
 
       it 'returns a not found message' do
-        expect(response.body).to match(/Couldn't find Todo/)
+        expect(response.body).to match(/Couldn't find Trip/)
       end
     end
   end
@@ -68,7 +68,7 @@ RSpec.describe 'Trips API', type: :request do
 
       it 'returns a validation failure message' do
         expect(response.body)
-          .to match(/Validation failed: start can't be blank/)
+          .to match(/Validation failed: Start can't be blank, Stop can't be blank, Status can't be blank, Vehicleid can't be blank, Deviceid can't be blank/)
       end
     end
   end
