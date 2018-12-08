@@ -28,7 +28,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.permit(:trip_id, :start, :stop, :status, :vehicleId, :deviceId)
+    params.permit(:trip_id_number, :start, :stop, :status, :vehicleId, :deviceId)
   end
 
   def set_trip
