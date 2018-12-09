@@ -4,5 +4,9 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :stats
+    collection do
+      get 'distance'
+      get 'highest'
+    end
   end
 end

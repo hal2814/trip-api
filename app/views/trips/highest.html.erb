@@ -1,0 +1,17 @@
+<div class="max-speed">
+  <div class="row">
+    <div class="col s6">
+      <h4>Highest Speed Trip:</h4>
+      <h5>Trip Id: <%= @max_speed_trip.trip_id_number %></h5>
+      <p>Distance: <%= @max_speed_trip.start %></p>
+      <h4>Max speed: <%= @max_speed_trip.stats.first.max_speed %></h4>
+    </div>
+    <div class="col s6">
+      <p>Start: <%= @max_speed_trip.start %></p>
+      <p>Stop: <%= @max_speed_trip.stop %></p>
+      <p>Status: <%= @max_speed_trip.status %></p>
+      <p>Vehicle Id: <%= @max_speed_trip.vehicleId %></p>
+      <p>Device Id: <%= @max_speed_trip.deviceId %></p>
+    </div>
+  </div>
+</div>

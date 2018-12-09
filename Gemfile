@@ -26,6 +26,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'figaro'
 gem 'materialize-sass', '~> 1.0.0'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'devise'
 
 
 group :development, :test do

@@ -2,20 +2,24 @@ class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :update, :destroy]
 
   def index
-    # @trips = Trip.all.order("created_at DESC").paginate(page: params[:page], per_page: 10)
-    @trips = Trip.joins(:stats).order('stats.distance::float DESC').paginate(page: params[:page], per_page: 10)
-    max_speed_stat = Stat.where(max_speed: Stat.maximum("max_speed::integer"))
-    @max_speed_trip = Trip.where(id: max_speed_stat.first.trip_id).first
-    # json_response(@trips)
+    @trips = Trip.all.paginate(page: params[:page], per_page: 10)
+  end
+
+  def distance
+    @trips = Trip.order_by_distance.paginate(page: params[:page], per_page: 10)
+  end
+
+  def highest
+    @max_speed_trip = Trip.max_speed_trip
   end
 
   def create
     @trip = Trip.create!(trip_params)
-    # json_response(@trip, :created)
+    json_response(@trip, :created)
   end
 
   def show
-    # json_response(@trip)
+    json_response(@trip)
   end
 
   def update
